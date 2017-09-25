@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DarkUnion functions and definitions
  *
@@ -39,27 +38,27 @@ function DarkUnion_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'DarkUnion_content_width', 1170 );
 }
 
-// function DarkUnion_init() {
-//     // $location = 'mega_menu';
-//     // $css_class = 'has-mega-menu';
-//     $locations = get_nav_menu_locations();
-//     if ( isset( $locations[ $location ] ) ) {
-//         $menu = get_term( $locations[ $location ], 'nav_menu' );
-//         if ( $items = wp_get_nav_menu_items( $menu->name ) ) {
-//             foreach ( $items as $item ) {
-//                 if ( in_array( $css_class, $item->classes ) ) {
-//                     register_sidebar( array(
-//                       // 'id'   => 'mega-menu-widget-area-' . $item->ID,
-//                       // 'name' => $item->title . ' - Mega Menu',
-//                       'before_widget' => '',
-//                       'after_widget' => '',
-//                     ) );
-//                 }
-//             }
-//         }
-//     }
-// }
-// add_action( 'widgets_init', 'DarkUnion_init' );
+function DarkUnion_init() {
+    $location = 'mega_menu';
+    $css_class = 'has-mega-menu';
+    $locations = get_nav_menu_locations();
+    if ( isset( $locations[ $location ] ) ) {
+        $menu = get_term( $locations[ $location ], 'nav_menu' );
+        if ( $items = wp_get_nav_menu_items( $menu->name ) ) {
+            foreach ( $items as $item ) {
+                if ( in_array( $css_class, $item->classes ) ) {
+                    register_sidebar( array(
+                      'id'   => 'mega-menu-widget-area-' . $item->ID,
+                      'name' => $item->title . ' - Mega Menu',
+                      'before_widget' => '',
+                      'after_widget' => '',
+                    ) );
+                }
+            }
+        }
+    }
+}
+add_action( 'widgets_init', 'DarkUnion_init' );
 
 add_action( 'after_setup_theme', 'DarkUnion_content_width', 0 );
 
@@ -77,7 +76,9 @@ function DarkUnion_widgets_init() {
 add_action( 'widgets_init', 'DarkUnion_widgets_init' );
 
 function DarkUnion_scripts() {
-	wp_enqueue_style( 'DarkUnion-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.css' );
+  //laden bootstrap
+  wp_enqueue_style( 'DarkUnion-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.css' );
+  //laden eigen css
 	wp_enqueue_style( 'DarkUnion-css', get_template_directory_uri() . '/style.css' );
   // laden javascript
   wp_enqueue_script('DarkUnion-jqueryjs', get_template_directory_uri() . '/js/jquery.min.js', array() );
