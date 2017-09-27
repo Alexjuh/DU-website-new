@@ -1,0 +1,119 @@
+/* take over from bootstrap */
+
+  /*html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }*/
+
+
+
+
+
+/*.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li.active > a:focus {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}*/
+
+/*take over from bootstrap all tabs */
+
+#menu-rassen {
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+#menu-rassen > li {
+  float: left;
+  margin-bottom: -1px;
+  border-bottom: 1px solid #dddddd;
+}
+#menu-rassen > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+#menu-rassen > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+  background-color: black;
+}
+
+#menu-rassen .current-menu-item{
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+/*#menu-rassen > li.active > a,
+#menu-rassen > li.active > a:hover,
+#menu-rassen > li.active > a:focus {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}*/
+/*#menu-rassen.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+#menu-rassen.nav-justified > li {
+  float: none;
+}
+#menu-rassen.nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#menu-rassen.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  #menu-rassen.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  #menu-rassen.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+#menu-rassen.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+#menu-rassen.nav-justified > .active > a,
+#menu-rassen.nav-justified > .active > a:hover,
+#menu-rassen.nav-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  #menu-rassen.nav-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  #menu-rassen.nav-justified > .active > a,
+  #menu-rassen.nav-justified > .active > a:hover,
+  #menu-rassen.nav-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}*/

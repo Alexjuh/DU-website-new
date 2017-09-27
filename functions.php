@@ -16,8 +16,10 @@ function DarkUnion_starter_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     register_nav_menus( array(
-		'primary' => esc_html__( 'Primary menu'),
-    // 'mega_menu' => 'Mega Menu'
+      'primary' => __( 'Primary Menu', 'DarkUnion' ),
+      'submenu'  => __( 'Sub Menu', 'DarkUnion' ),
+      'footer'  => __( 'Footer Menu', 'DarkUnion' ),
+      'tabs'  => __( 'Tabs Menu', 'DarkUnion' ),
 	) );
   add_theme_support( 'html5', array(
     'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
@@ -38,27 +40,27 @@ function DarkUnion_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'DarkUnion_content_width', 1170 );
 }
 
-function DarkUnion_init() {
-    $location = 'mega_menu';
-    $css_class = 'has-mega-menu';
-    $locations = get_nav_menu_locations();
-    if ( isset( $locations[ $location ] ) ) {
-        $menu = get_term( $locations[ $location ], 'nav_menu' );
-        if ( $items = wp_get_nav_menu_items( $menu->name ) ) {
-            foreach ( $items as $item ) {
-                if ( in_array( $css_class, $item->classes ) ) {
-                    register_sidebar( array(
-                      'id'   => 'mega-menu-widget-area-' . $item->ID,
-                      'name' => $item->title . ' - Mega Menu',
-                      'before_widget' => '',
-                      'after_widget' => '',
-                    ) );
-                }
-            }
-        }
-    }
-}
-add_action( 'widgets_init', 'DarkUnion_init' );
+// function DarkUnion_init() {
+//     $location = 'mega_menu';
+//     $css_class = 'has-mega-menu';
+//     $locations = get_nav_menu_locations();
+//     if ( isset( $locations[ $location ] ) ) {
+//         $menu = get_term( $locations[ $location ], 'nav_menu' );
+//         if ( $items = wp_get_nav_menu_items( $menu->name ) ) {
+//             foreach ( $items as $item ) {
+//                 if ( in_array( $css_class, $item->classes ) ) {
+//                     register_sidebar( array(
+//                       'id'   => 'mega-menu-widget-area-' . $item->ID,
+//                       'name' => $item->title . ' - Mega Menu',
+//                       'before_widget' => '',
+//                       'after_widget' => '',
+//                     ) );
+//                 }
+//             }
+//         }
+//     }
+// }
+// add_action( 'widgets_init', 'DarkUnion_init' );
 
 add_action( 'after_setup_theme', 'DarkUnion_content_width', 0 );
 

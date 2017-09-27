@@ -19,6 +19,7 @@ Tags: right-sidebar, brown, white, header, slider, brand
 	## Normal
 	## Tablet/mobile
 # Content
+	## Tabs
 # Sidebar
 # Footer
 --------------------------------------------------------------*/
@@ -30,6 +31,24 @@ Tags: right-sidebar, brown, white, header, slider, brand
 	padding: 0px;
 	box-sizing: border-box;
 	font-family: sans-serif;
+}
+
+html{
+	text-decoration: none;
+}
+
+body{
+	height: 100%;
+}
+
+#wrapper{
+	/*height: 100vh;*/
+	height: 100%;
+	background-color: grey;
+}
+
+#content{
+	height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -44,7 +63,7 @@ Tags: right-sidebar, brown, white, header, slider, brand
 # Header
 --------------------------------------------------------------*/
 #header{
-	background-color: yellow;
+	background-color: #FFF;
 }
 
 /*--------------------------------------------------------------
@@ -53,9 +72,54 @@ Tags: right-sidebar, brown, white, header, slider, brand
 /*--------------------------------------------------------------
 ## Normal
 --------------------------------------------------------------*/
-#navbar{
+#navbar-hoofd-menu,
+#navbar-sub-menu{
 	background-color: blue;
-	height: 700px;
+	overflow-y: auto;
+}
+
+#navbar-hoofd-menu ul,
+#navbar-sub-menu ul{
+	list-style: none;
+	text-align: center;
+	background-color: red;
+	height: 100vh;
+	position: relative;
+	display: block;
+}
+
+#navbar-hoofd-menu li:first-of-type, #navbar-sub-menu li:first-of-type{
+	border-top: 0;
+}
+
+#navbar-hoofd-menu a,
+#navbar-sub-menu a{
+	color: white;
+	text-decoration: none;
+	display: block;
+	font-size: 18px;
+}
+
+#navbar-hoofd-menu li{
+	display: block;
+	background-color: black;
+	height: 14.20%;
+	width: auto;
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+}
+
+#navbar-sub-menu li{
+	display: none;
+	background-color: black;
+	height: 14.20%;
+	width: auto;
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+}
+
+#menu-item-84:hover{
+	background-color: green;
 }
 
 /*--------------------------------------------------------------
@@ -67,7 +131,55 @@ Tags: right-sidebar, brown, white, header, slider, brand
 --------------------------------------------------------------*/
 
 #main{
-	background-color: red;
+	background-color: #FFF;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: calc(100% - 50px);
+}
+
+#page-content{
+	padding: 10px;
+}
+
+/*--------------------------------------------------------------
+## Tabs
+--------------------------------------------------------------*/
+
+#tabs{
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+#tabs li {
+  float: left;
+  margin-bottom: -1px;
+	list-style: none;
+}
+#tabs li:first-of-type{
+	margin-left: 10px;
+}
+#tabs li:last-of-type{
+	margin-right: 10px;
+}
+#tabs li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+#tabs li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+  background-color: black;
+}
+#tabs .current-menu-item{
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
 }
 
 /*--------------------------------------------------------------
@@ -75,6 +187,9 @@ Tags: right-sidebar, brown, white, header, slider, brand
 --------------------------------------------------------------*/
 #sidebar-1{
 	background-color: green;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -82,5 +197,19 @@ Tags: right-sidebar, brown, white, header, slider, brand
 --------------------------------------------------------------*/
 
 #footer{
-	background-color: black;
+	background-color: #FFF;
+	height: auto;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+}
+
+#footer li{
+		list-style-type: none;
+}
+
+#footer a{
+	color: #000;
+	font-weight: bold;
 }

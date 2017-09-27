@@ -10,8 +10,21 @@
  */
  ?>
   <!-- <div id="content" class="row"> -->
-    <div id="main" class="col-xs-12 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div> <!-- END DIV MAIN -->
+        <div id="content" class="col-xs-12 col-sm-10 col-md-10">
+          <?php
+        		if (have_posts()) :
+        			while (have_posts()) : the_post(); ?>
+          <div id="main" class="col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-md-offset-1">
+            <div id="tabs" class="container">
+              <?php wp_nav_menu( array( 'theme_location' => 'tabs' ) ); ?> <!-- voor tabs menu -->
+            </div> <!-- END DIV TABS -->
+            <div id="page-content">
+              <p><?= the_content('post_content', $post->ID) ?></p>
+            </div> <!-- END DIV PAGE-CONTENT -->
+          </div> <!-- END DIV MAIN -->
+        <?php endwhile;
+          else: echo '<p>no content fount</p>';
+            endif;
+        ?>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
