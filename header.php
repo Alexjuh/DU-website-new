@@ -24,7 +24,7 @@
   <body>
     <div id="wrapper" class="row">
       <div id="navbar-hoofd-menu" class="col-xs-12 col-sm-2 col-md-2">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
       </div> <!-- END DIV NAVBAR -->
       <div id="header" class="col-xs-12 col-sm-10 col-md-10">
         <?php if ( function_exists( 'the_custom_logo' ) ) {

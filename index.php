@@ -16,6 +16,8 @@
         			while (have_posts()) : the_post(); ?>
           <div id="main" class="col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-md-offset-1">
             <div id="tabs" class="container">
+              <a name="tabs"></a>
+              <ul class="tabs"></ul>
               <?php wp_nav_menu( array( 'theme_location' => 'tabs' ) ); ?> <!-- voor tabs menu -->
             </div> <!-- END DIV TABS -->
             <div id="page-content">

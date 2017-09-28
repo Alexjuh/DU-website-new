@@ -59,6 +59,15 @@ function DarkUnion_widgets_init() {
 }
 add_action( 'widgets_init', 'DarkUnion_widgets_init' );
 
+//opruimen alle extra ids en classes op items
+function wp_nav_menu_attributes_filter($var) {
+	return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
+}
+add_filter('nav_menu_css_class', 'wp_nav_menu_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'wp_nav_menu_attributes_filter', 100, 1);
+add_filter('page_css_class', 'wp_nav_menu_attributes_filter', 100, 1);
+
+// scripts laden
 function DarkUnion_scripts() {
   //laden bootstrap
   wp_enqueue_style( 'DarkUnion-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.css' );
@@ -66,6 +75,8 @@ function DarkUnion_scripts() {
 	wp_enqueue_style( 'DarkUnion-css', get_template_directory_uri() . '/style.css' );
   // laden javascript
   wp_enqueue_script('DarkUnion-jqueryjs', get_template_directory_uri() . '/js/jquery.min.js', array() );
+  // laden move.js
+  wp_enqueue_script('DarkUnion-movejs', get_template_directory_uri() . '/js/move.js', array() );
   // Remove WP Version From Styles
   add_filter( 'style_loader_src', 'sdt_remove_ver_css_js', 9999 );
   // Remove WP Version From Scripts
@@ -88,6 +99,11 @@ wp_enqueue_script('jquery');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'DarkUnion_scripts' );
+
+// function include_js() {
+//   wp_enqueue_script('DarkUnion-movejs', get_stylesheet_directory_uri() . '/js/move.js');
+//   }
+// add_action( 'wp_enqueue_scripts', 'include_js');
 
 function DarkUnion_password_form() {
   global $post;

@@ -61,12 +61,14 @@ p:empty{
 #wrapper{
 	/*height: 100vh;*/
 	height: 100%;
-	background-color: grey;
+	background-color: #eeeeee;
 }
 
 #content{
-	background-color: grey;
+	background-color: #eeeeee;
 }
+
+/* ee1c24 - red needed for login button*/
 
 /*--------------------------------------------------------------
 # Typography
@@ -120,6 +122,7 @@ img{
 	width: auto;
 	border-bottom: 1px solid white;
 	border-right: 1px solid white;
+	padding: 10px 10px 10px 0;
 }
 
 #navbar-hoofd-menu li:last-of-type{
@@ -134,7 +137,7 @@ img{
 	top: 0;
 	position: fixed;
 	margin-left: 16.66%;
-	background-color: red; /* not decided on color yet */
+	background-color: #FFFFFF;
 	z-index: 1001;
 }
 
@@ -143,19 +146,77 @@ img{
 }
 
 #navbar-hoofd-menu .sub-menu li{
-	background-color: grey;
-	border-bottom: : 1px solid white;
+	background-color: #383838;
+	border-bottom: 1px solid white;
 	border-right: 0;
-	padding: 10px;
 }
 
 #navbar-hoofd-menu .sub-menu li:last-of-type{
 	border-bottom: 1px solid white;
 }
 
+#navbar-hoofd-menu .sub-menu .sub-menu{
+	background-color: green;
+}
+
 /*--------------------------------------------------------------
 ## Tablet/mobile
 --------------------------------------------------------------*/
+@media screen and (max-width: 768px){
+
+	#navbar-hoofd-menu .menu-hoofdmenu-container{
+		height: auto;
+	}
+
+	#navbar-hoofd-menu img{
+		display: none;
+	}
+
+	#navbar-hoofd-menu ul{
+		height: auto;
+	}
+
+	#navbar-hoofd-menu li{
+		height: fit-content;
+		padding: 0;
+	}
+
+	#navbar-hoofd-menu a{
+		padding: 10px 0;
+	}
+
+	#header img{
+		display: block;
+		margin: 10px auto;
+	}
+
+	#navbar-hoofd-menu .sub-menu{
+		position: relative;
+		display: none;
+		min-width: 100%;
+		height: auto;
+		margin: 0;
+	}
+
+	#navbar-hoofd-menu .sub-menu li{
+		display: block;
+		padding: 0;
+	}
+
+	#navbar-hoofd-menu .sub-menu li:first-of-type{
+		border-top: 1px solid white;
+	}
+
+	#navbar-hoofd-menu li:hover{
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+
+	#navbar-hoofd-menu li:hover .sub-menu{
+		display: inline-block;
+	}
+
+}
 
 /*--------------------------------------------------------------
 # Content
@@ -203,7 +264,7 @@ img{
 }
 
 #tabs li > a:hover {
-	background-color: grey;
+	background-color: #383838;
 	color: #FFFFFF;
 }
 
