@@ -19,6 +19,7 @@
               <?php wp_nav_menu( array( 'theme_location' => 'tabs' ) ); ?> <!-- voor tabs menu -->
             </div> <!-- END DIV TABS -->
             <div id="page-content">
+              <h1><?php the_title() ?></h1>
               <p><?= the_content('post_content', $post->ID) ?></p>
             </div> <!-- END DIV PAGE-CONTENT -->
           </div> <!-- END DIV MAIN -->
